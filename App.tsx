@@ -8,7 +8,7 @@ export default function App() {
 		<View style={styles.container}>
 			<QueryClientProvider client={new QueryClient()}>
 				<PaperProvider>
-					<Navigator/>
+					<Navigator />
 				</PaperProvider>
 			</QueryClientProvider>
 		</View>
@@ -18,6 +18,5 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'red'
 	},
 });

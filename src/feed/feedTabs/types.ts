@@ -38,4 +38,4 @@ type VehicleCardProps = {
 	vehicle_class: string;
 }
 
-export {StarshipCardProps, SpeciesCardProps};
+export {StarshipCardProps, SpeciesCardProps, CharacterCardProps, VehicleCardProps, PlanetCardProps};

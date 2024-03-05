@@ -1,12 +1,12 @@
 import {View} from "react-native";
-import {useStarships} from "../../queries/useStarships";
 import {Text} from "react-native-paper";
-import StarshipCard from "./feedCards/StarshipCard";
-import {StarshipCardProps} from "./types";
+import {CharacterCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
+import {useCharacters} from "../../queries/useCharacters";
+import CharacterCard from "./feedCards/CharacterCard";
 
-export const StarshipFeed = () => {
-	const {isLoading, isError, data, error} = useStarships();
+export const CharacterFeed = () => {
+	const {isLoading, isError, data, error} = useCharacters();
 
 	return (
 		<>
@@ -25,13 +25,13 @@ export const StarshipFeed = () => {
 			{!(isLoading || isError) && (
 				<StyledFlatList
 					data={data.results}
-					renderItem={({item}: { item: StarshipCardProps }) => (
-						<StarshipCard
+					renderItem={({item}: { item: CharacterCardProps }) => (
+						<CharacterCard
 							name={item.name}
-							model={item.model}
-							crew={item.crew}
-							hyperdrive_rating={item.hyperdrive_rating}
-							cost_in_credits={item.cost_in_credits}
+							homeworld={item.homeworld}
+							height={item.height}
+							weight={item.weight}
+							birth_year={item.birth_year}
 						/>
 					)}
 					ItemSeparatorComponent={() => (
