@@ -34,6 +34,7 @@ export const SpeciesFeed = () => {
 							average_height={item.average_height}
 							average_lifespan={item.average_lifespan}
 							homeworld={item.homeworld}
+							url={item.url}
 						/>
 					)}
 					ItemSeparatorComponent={() => (

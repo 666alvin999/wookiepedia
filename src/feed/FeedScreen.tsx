@@ -5,7 +5,7 @@ import {FeedNavBar} from "./FeedNavBar";
 
 const FeedScreen = () => {
 
-	const [selectedFeed, setSelectedFeed] = useState("starships");
+	const [selectedFeed, setSelectedFeed] = useState("species");
 
 	const changeFeed = (newFeed: string) => {
 		setSelectedFeed(newFeed)

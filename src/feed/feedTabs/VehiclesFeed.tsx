@@ -34,6 +34,7 @@ export const VehiclesFeed = () => {
 							cost_in_credit={item.cost_in_credit}
 							length={item.length}
 							vehicle_class={item.vehicle_class}
+							url={item.url}
 						/>
 					)}
 					ItemSeparatorComponent={() => (

@@ -15,7 +15,7 @@ const useImage = (name: string) => {
 	return source;
 };
 
-const CharacterCard = ({name, homeworld, height, weight, birth_year}: CharacterCardProps) => {
+const CharacterCard = ({name, homeworld, height, weight, birth_year, url}: CharacterCardProps) => {
 	const navigation = useNavigation();
 
 	const handlePress = () => {

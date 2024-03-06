@@ -4,6 +4,7 @@ type StarshipCardProps = {
 	crew: string;
 	hyperdrive_rating: string;
 	cost_in_credits: string;
+	url: string;
 };
 
 type SpeciesCardProps = {
@@ -12,6 +13,7 @@ type SpeciesCardProps = {
 	average_height: number;
 	average_lifespan: number;
 	homeworld: string;
+	url: string;
 };
 
 type CharacterCardProps = {
@@ -20,6 +22,7 @@ type CharacterCardProps = {
 	weight: number;
 	birth_year: string;
 	homeworld: string;
+	url: string;
 }
 
 type PlanetCardProps = {
@@ -28,6 +31,7 @@ type PlanetCardProps = {
 	rotation_period: number;
 	orbital_period: number;
 	population: number;
+	url: string;
 }
 
 type VehicleCardProps = {
@@ -36,6 +40,7 @@ type VehicleCardProps = {
 	cost_in_credit: number;
 	length: number;
 	vehicle_class: string;
+	url: string;
 }
 
 export {StarshipCardProps, SpeciesCardProps, CharacterCardProps, VehicleCardProps, PlanetCardProps};

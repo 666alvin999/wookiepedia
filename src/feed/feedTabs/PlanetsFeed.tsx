@@ -33,6 +33,7 @@ export const PlanetsFeed = () => {
 							orbital_period={item.orbital_period}
 							rotation_period={item.rotation_period}
 							population={item.population}
+							url={item.url}
 						/>
 					)}
 					ItemSeparatorComponent={() => (

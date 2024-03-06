@@ -32,6 +32,7 @@ export const CharactersFeed = () => {
 							height={item.height}
 							weight={item.weight}
 							birth_year={item.birth_year}
+							url={item.url}
 						/>
 					)}
 					ItemSeparatorComponent={() => (

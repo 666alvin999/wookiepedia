@@ -42,7 +42,7 @@ const useImage = (title: string) => {
 	return source;
 };
 
-const StarshipCard = (item: StarshipCardProps) => {
+const StarshipCard = ({name, model, hyperdrive_rating, crew, cost_in_credits, url}: StarshipCardProps) => {
 	const navigation = useNavigation();
 
 	const handlePress = () => {
@@ -53,19 +53,19 @@ const StarshipCard = (item: StarshipCardProps) => {
 		<>
 			<TouchableOpacity onPress={handlePress}>
 				<Card>
-					<Card.Cover source={{uri: useImage(item.name)}} resizeMode="cover" />
+					<Card.Cover source={{uri: useImage(name)}} resizeMode="cover" />
 					<Card.Title
-						title={item.name}
-						subtitle={item.model}
+						title={name}
+						subtitle={model}
 					/>
 					<Card.Content>
 						<Text variant="bodySmall">
 							Hyperdrive
 							Rating: {
-							item.hyperdrive_rating
+							hyperdrive_rating
 						}
 						</Text>
-						<Text variant="bodySmall"> Crew : {item.crew}</Text>
+						<Text variant="bodySmall"> Crew : {crew}</Text>
 					</Card.Content>
 				</Card>
 			</TouchableOpacity>

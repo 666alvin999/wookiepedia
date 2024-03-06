@@ -15,7 +15,7 @@ const useImage = (name: string) => {
 	return source;
 };
 
-const PlanetCard = ({name, climate, rotation_period, orbital_period, population}: PlanetCardProps) => {
+const PlanetCard = ({name, climate, rotation_period, orbital_period, population, url}: PlanetCardProps) => {
 	const navigation = useNavigation();
 
 	const handlePress = () => {

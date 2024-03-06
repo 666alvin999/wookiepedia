@@ -15,7 +15,7 @@ const useImage = (name: string) => {
 	return source;
 };
 
-const CharacterCard = ({name, homeworld, average_lifespan, average_height, classification}: SpeciesCardProps) => {
+const CharacterCard = ({name, homeworld, average_lifespan, average_height, classification, url}: SpeciesCardProps) => {
 	const navigation = useNavigation();
 
 	const handlePress = () => {

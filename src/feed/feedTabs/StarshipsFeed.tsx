@@ -32,6 +32,7 @@ export const StarshipFeed = () => {
 							crew={item.crew}
 							hyperdrive_rating={item.hyperdrive_rating}
 							cost_in_credits={item.cost_in_credits}
+							url={item.url}
 						/>
 					)}
 					ItemSeparatorComponent={() => (
