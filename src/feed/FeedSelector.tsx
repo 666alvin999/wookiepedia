@@ -1,6 +1,9 @@
-import {CharacterFeed} from "./feedTabs/CharacterFeed";
+import {CharactersFeed} from "./feedTabs/CharactersFeed";
 import {StarshipFeed} from "./feedTabs/StarshipsFeed";
 import {FeedContainer} from "./styled-components";
+import {PlanetsFeed} from "./feedTabs/PlanetsFeed";
+import {SpeciesFeed} from "./feedTabs/SpeciesFeed";
+import {VehiclesFeed} from "./feedTabs/VehiclesFeed";
 
 export const FeedSelector = ({feed}) => {
 
@@ -8,11 +11,23 @@ export const FeedSelector = ({feed}) => {
 		<FeedContainer>
 			{
 				feed === "characters" &&
-				<CharacterFeed />
+				<CharactersFeed />
 			}
 			{
 				feed === "starships" &&
 				<StarshipFeed />
+			}
+			{
+				feed === "planets" &&
+				<PlanetsFeed />
+			}
+			{
+				feed === "species" &&
+				<SpeciesFeed />
+			}
+			{
+				feed === "vehicles" &&
+				<VehiclesFeed />
 			}
 		</FeedContainer>
 	)

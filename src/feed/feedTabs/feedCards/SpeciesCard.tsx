@@ -33,7 +33,7 @@ const CharacterCard = ({name, homeworld, average_lifespan, average_height, class
 					/>
 					<Card.Content>
 						<Text variant="bodySmall">Average Lifespan: {average_lifespan} years</Text>
-						<Text variant="bodySmall"> Average Height : {average_height}cm</Text>
+						<Text variant="bodySmall">Average Height : {average_height}cm</Text>
 					</Card.Content>
 				</Card>
 			</TouchableOpacity>

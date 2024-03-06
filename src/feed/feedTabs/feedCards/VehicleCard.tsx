@@ -1,7 +1,7 @@
 import {TouchableOpacity} from "react-native";
 import {Card, Text} from "react-native-paper";
 import {useNavigation} from "@react-navigation/native";
-import {CharacterCardProps, VehicleCardProps} from "../types";
+import {VehicleCardProps} from "../types";
 
 const useImage = (name: string) => {
 	const imageName = `${name.toLowerCase().replace(" ", "")}`;

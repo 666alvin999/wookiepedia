@@ -1,12 +1,13 @@
 import {View} from "react-native";
 import {Text} from "react-native-paper";
-import {CharacterCardProps} from "./types";
+import {PlanetCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
 import {useCharacters} from "../../queries/useCharacters";
-import CharacterCard from "./feedCards/CharacterCard";
+import PlanetCard from "./feedCards/PlanetCard";
+import {usePlanets} from "../../queries/usePlantets";
 
-export const CharacterFeed = () => {
-	const {isLoading, isError, data, error} = useCharacters();
+export const PlanetsFeed = () => {
+	const {isLoading, isError, data, error} = usePlanets();
 
 	return (
 		<>
@@ -25,13 +26,13 @@ export const CharacterFeed = () => {
 			{!(isLoading || isError) && (
 				<StyledFlatList
 					data={data.results}
-					renderItem={({item}: { item: CharacterCardProps }) => (
-						<CharacterCard
+					renderItem={({item}: { item: PlanetCardProps }) => (
+						<PlanetCard
 							name={item.name}
-							homeworld={item.homeworld}
-							height={item.height}
-							weight={item.weight}
-							birth_year={item.birth_year}
+							climate={item.climate}
+							orbital_period={item.orbital_period}
+							rotation_period={item.rotation_period}
+							population={item.population}
 						/>
 					)}
 					ItemSeparatorComponent={() => (

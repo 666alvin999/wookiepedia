@@ -29,7 +29,7 @@ const MyNavBar = styled(View)`
 `;
 
 const SelectedButton = styled(Button)`
-	background-color: rgba(255, 255, 0, 0.2);
+  background-color: rgba(255, 255, 0, 0.2);
 `;
 
 export {MyNavBar, SelectedButton, FeedContainer, StyledFlatList};
