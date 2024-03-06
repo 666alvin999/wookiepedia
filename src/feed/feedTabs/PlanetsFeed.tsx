@@ -2,16 +2,15 @@ import {View} from "react-native";
 import {Text} from "react-native-paper";
 import {PlanetCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
-import {useCharacters} from "../../queries/useCharacters";
 import PlanetCard from "./feedCards/PlanetCard";
 import {usePlanets} from "../../queries/usePlantets";
 
 export const PlanetsFeed = () => {
-	const {isLoading, isError, data, error} = usePlanets();
+	const {isPending, isError, data, error} = usePlanets();
 
 	return (
 		<>
-			{isLoading && (
+			{isPending && (
 				<View>
 					<Text variant="labelLarge">Loading...</Text>
 				</View>
@@ -23,7 +22,7 @@ export const PlanetsFeed = () => {
 				</View>
 			)}
 
-			{!(isLoading || isError) && (
+			{!(isPending || isError) && (
 				<StyledFlatList
 					data={data.results}
 					renderItem={({item}: { item: PlanetCardProps }) => (

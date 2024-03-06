@@ -2,31 +2,22 @@ import {TouchableOpacity} from "react-native";
 import {Card, Text} from "react-native-paper";
 import {useNavigation} from "@react-navigation/native";
 import {PlanetCardProps} from "../types";
-
-const useImage = (name: string) => {
-	const imageName = `${name.toLowerCase().replace(" ", "")}`;
-	let source;
-
-	switch (imageName) {
-		case "lukeskywalker":
-			source = "https://www.leparisien.fr/resizer/hBQKqatpwpgeZIImeAiLscjOkQc=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/EAJWBYDXBBG4U65O3D4OTNDXD4.jpg"
-			break;
-	}
-	return source;
-};
+import {usePlanetsImage} from "../../../useImage";
 
 const PlanetCard = ({name, climate, rotation_period, orbital_period, population, url}: PlanetCardProps) => {
 	const navigation = useNavigation();
 
+	const source = usePlanetsImage(name);
+
 	const handlePress = () => {
-		// navigation.navigate(Routes.STARSHIP_DETAIL_SCREEN, {starship: item});
+		navigation.navigate("Detail", {url: url, imageUrl: source});
 	};
 
 	return (
 		<>
 			<TouchableOpacity onPress={handlePress}>
 				<Card>
-					<Card.Cover source={{uri: useImage(name)}} resizeMode="cover" />
+					<Card.Cover source={source} resizeMode="cover" />
 					<Card.Title
 						title={name}
 						subtitle={climate}

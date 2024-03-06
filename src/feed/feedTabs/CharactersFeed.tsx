@@ -6,11 +6,11 @@ import {useCharacters} from "../../queries/useCharacters";
 import CharacterCard from "./feedCards/CharacterCard";
 
 export const CharactersFeed = () => {
-	const {isLoading, isError, data, error} = useCharacters();
+	const {isPending, isError, data, error} = useCharacters();
 
 	return (
 		<>
-			{isLoading && (
+			{isPending && (
 				<View>
 					<Text variant="labelLarge">Loading...</Text>
 				</View>
@@ -22,7 +22,7 @@ export const CharactersFeed = () => {
 				</View>
 			)}
 
-			{!(isLoading || isError) && (
+			{!(isPending || isError) && (
 				<StyledFlatList
 					data={data.results}
 					renderItem={({item}: { item: CharacterCardProps }) => (

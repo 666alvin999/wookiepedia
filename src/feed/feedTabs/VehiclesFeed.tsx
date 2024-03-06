@@ -1,18 +1,16 @@
 import {View} from "react-native";
 import {Text} from "react-native-paper";
-import {CharacterCardProps, VehicleCardProps} from "./types";
+import {VehicleCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
-import {useCharacters} from "../../queries/useCharacters";
-import CharacterCard from "./feedCards/CharacterCard";
 import VehicleCard from "./feedCards/VehicleCard";
 import {useVehicles} from "../../queries/useVehicles";
 
 export const VehiclesFeed = () => {
-	const {isLoading, isError, data, error} = useVehicles();
+	const {isPending, isError, data, error} = useVehicles();
 
 	return (
 		<>
-			{isLoading && (
+			{isPending && (
 				<View>
 					<Text variant="labelLarge">Loading...</Text>
 				</View>
@@ -24,7 +22,7 @@ export const VehiclesFeed = () => {
 				</View>
 			)}
 
-			{!(isLoading || isError) && (
+			{!(isPending || isError) && (
 				<StyledFlatList
 					data={data.results}
 					renderItem={({item}: { item: VehicleCardProps }) => (

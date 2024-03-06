@@ -2,6 +2,7 @@ import {TouchableOpacity} from "react-native";
 import {Card, Text} from "react-native-paper";
 import {useNavigation} from "@react-navigation/native";
 import {VehicleCardProps} from "../types";
+import {useVehiclesImage} from "../../../useImage";
 
 const useImage = (name: string) => {
 	const imageName = `${name.toLowerCase().replace(" ", "")}`;
@@ -15,18 +16,20 @@ const useImage = (name: string) => {
 	return source;
 };
 
-const CharacterCard = ({name, manufacturer, length, cost_in_credit, vehicle_class}: VehicleCardProps) => {
+const CharacterCard = ({name, manufacturer, length, cost_in_credit, vehicle_class, url}: VehicleCardProps) => {
 	const navigation = useNavigation();
 
+	const source = useVehiclesImage(name);
+
 	const handlePress = () => {
-		// navigation.navigate(Routes.STARSHIP_DETAIL_SCREEN, {starship: item});
+		navigation.navigate("Detail", {url: url, imageUrl: source});
 	};
 
 	return (
 		<>
 			<TouchableOpacity onPress={handlePress}>
 				<Card>
-					<Card.Cover source={{uri: useImage(name)}} resizeMode="cover" />
+					<Card.Cover source={source} resizeMode="cover" />
 					<Card.Title
 						title={name}
 						subtitle={vehicle_class}

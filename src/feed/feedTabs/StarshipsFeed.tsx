@@ -6,11 +6,11 @@ import {StarshipCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
 
 export const StarshipFeed = () => {
-	const {isLoading, isError, data, error} = useStarships();
+	const {isPending, isError, data, error} = useStarships();
 
 	return (
 		<>
-			{isLoading && (
+			{isPending && (
 				<View>
 					<Text variant="labelLarge">Loading...</Text>
 				</View>
@@ -22,7 +22,7 @@ export const StarshipFeed = () => {
 				</View>
 			)}
 
-			{!(isLoading || isError) && (
+			{!(isPending || isError) && (
 				<StyledFlatList
 					data={data.results}
 					renderItem={({item}: { item: StarshipCardProps }) => (

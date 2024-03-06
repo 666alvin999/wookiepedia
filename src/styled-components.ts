@@ -6,7 +6,16 @@ const MyBackground = styled.ImageBackground`
   height: 100%;
 `;
 
+const LoginViewContainer = styled.View`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const ViewContainer = styled.View`
+  background-color: white;
   height: 100%;
   width: 100%;
   display: flex;
@@ -45,4 +54,4 @@ const FormButton = styled(Button)`
   width: 80%;
 `;
 
-export {MyBackground, ViewContainer, AppName, FormView, FormTextInput, FormButton};
+export {MyBackground, LoginViewContainer, ViewContainer, AppName, FormView, FormTextInput, FormButton};

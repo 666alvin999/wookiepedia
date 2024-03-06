@@ -2,6 +2,7 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import LoginScreen from "../login/LoginScreen";
 import FeedScreen from "../feed/FeedScreen";
+import {FeedDetails} from "../feedDetails/FeedDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,10 @@ const Navigator = () => {
 				<Stack.Screen
 					name="Feed"
 					component={FeedScreen}
+				/>
+				<Stack.Screen
+					name="Detail"
+					component={FeedDetails}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

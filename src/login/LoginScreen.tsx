@@ -1,6 +1,6 @@
 import {useAssets} from "expo-asset";
 import LoginForm from "./component/LoginForm";
-import {AppName, MyBackground, ViewContainer} from "../styled-components";
+import {AppName, LoginViewContainer, MyBackground} from "../styled-components";
 
 const LoginScreen = () => {
 
@@ -12,11 +12,11 @@ const LoginScreen = () => {
 				source={{uri: imageUrl?.[0]?.uri}}
 				resizeMode="cover"
 			>
-				<ViewContainer>
+				<LoginViewContainer>
 					<AppName>WOOKIEPEDIA</AppName>
 
 					<LoginForm />
-				</ViewContainer>
+				</LoginViewContainer>
 			</MyBackground>
 		</>
 	);
