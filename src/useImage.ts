@@ -1,6 +1,5 @@
 const useSpeciesImage = (name: string) => {
-	const imageName = `${name.toLowerCase()}`;
-	console.log(imageName);
+	const imageName = `${name || "default"}`.toLowerCase();
 
 	let source;
 
@@ -32,8 +31,7 @@ const useSpeciesImage = (name: string) => {
 		case "ewok":
 			source = require("../images/ewok.webp");
 			break;
-		// case "sullustan":
-		default:
+		case "sullustan":
 			source = require("../images/sullustan.webp");
 			break;
 	}
@@ -42,8 +40,7 @@ const useSpeciesImage = (name: string) => {
 };
 
 const useCharactersImage = (name: string) => {
-	const imageName = `${name.toLowerCase()}`;
-	console.log(imageName);
+	const imageName = `${name || "default"}`.toLowerCase();
 
 	let source;
 
@@ -75,8 +72,7 @@ const useCharactersImage = (name: string) => {
 		case "biggs darklighter":
 			source = require("../images/biggs darklighter.webp");
 			break;
-		// case "obi-wan kenobi":
-		default:
+		case "obi-wan kenobi":
 			source = require("../images/obi-wan kenobi.webp");
 			break;
 	}
@@ -85,8 +81,7 @@ const useCharactersImage = (name: string) => {
 };
 
 const usePlanetsImage = (name: string) => {
-	const imageName = `${name.toLowerCase()}`;
-	console.log(imageName);
+	const imageName = `${name || "default"}`.toLowerCase();
 
 	let source;
 
@@ -118,8 +113,7 @@ const usePlanetsImage = (name: string) => {
 		case "coruscant":
 			source = require("../images/coruscant.webp");
 			break;
-		// case "kamino":
-		default:
+		case "kamino":
 			source = require("../images/kamino.webp");
 			break;
 	}
@@ -127,9 +121,8 @@ const usePlanetsImage = (name: string) => {
 	return source;
 };
 
-const useStarshipsImage = (title: string) => {
-	const imageName = `${title.toLowerCase().replace(" ", "")}`;
-	console.log(imageName);
+const useStarshipsImage = (name: string) => {
+	const imageName = `${name || "default"}`.toLowerCase();
 
 	let source;
 	switch (imageName) {
@@ -160,8 +153,7 @@ const useStarshipsImage = (title: string) => {
 		case "executor":
 			source = require("../images/executor.jpg");
 			break;
-		// case "rebeltransport":
-		default:
+		case "rebeltransport":
 			source = require("../images/rebeltransport.jpg");
 			break;
 	}
@@ -170,8 +162,7 @@ const useStarshipsImage = (title: string) => {
 };
 
 const useVehiclesImage = (name: string) => {
-	const imageName = `${name.toLowerCase()}`;
-	console.log(imageName);
+	const imageName = `${name || "default"}`.toLowerCase();
 	let source;
 
 	switch (imageName) {
@@ -202,8 +193,7 @@ const useVehiclesImage = (name: string) => {
 		case "storm iv twin-pod cloud car":
 			source = require("../images/storm iv.webp");
 			break;
-		// case "sail barge":
-		default:
+		case "sail barge":
 			source = require("../images/sail barge.webp");
 			break;
 	}
