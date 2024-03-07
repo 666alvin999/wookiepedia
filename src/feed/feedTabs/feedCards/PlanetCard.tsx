@@ -10,7 +10,7 @@ const PlanetCard = ({name, climate, rotation_period, orbital_period, population,
 	const source = usePlanetsImage(name);
 
 	const handlePress = () => {
-		navigation.navigate("Detail", {url: url, imageUrl: source});
+		navigation.navigate("Detail", {url: url});
 	};
 
 	return (

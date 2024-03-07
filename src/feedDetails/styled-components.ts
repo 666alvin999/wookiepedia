@@ -1,14 +1,17 @@
-import {View} from "react-native";
+import {Image, View} from "react-native";
 import styled from "styled-components/native";
 
 const DetailImageView = styled(View)`
   width: 90%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  box-shadow: 0 0 50px black;
+  height: 30%;
+  overflow: visible;
+  border: 2px solid black;
+`;
+
+const DetailImage = styled(Image)`
+  background-color: white;
+  width: 90%;
+  height: 30%;
 `;
 
 const DetailsView = styled(View)`
@@ -55,4 +58,4 @@ const Specificities = styled(View)`
   border-radius: 20px;
 `
 
-export {DetailImageView, DetailsView, TitleView, SpecificitiesView, Specificities};
+export {DetailImageView, DetailImage, DetailsView, TitleView, SpecificitiesView, Specificities};

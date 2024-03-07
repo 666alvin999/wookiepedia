@@ -1,5 +1,5 @@
 import {Text} from "react-native-paper";
-import {Image, View} from "react-native";
+import {View} from "react-native";
 import {useDetails} from "../queries/useDetails";
 import {CharacterDetails} from "./specificDetails/CharacterDetails";
 import {PlanetDetails} from "./specificDetails/PlanetDetails";
@@ -7,12 +7,12 @@ import {StarshipDetails} from "./specificDetails/StarshipDetails";
 import {VehicleDetails} from "./specificDetails/VehicleDetails";
 import {SpeciesDetails} from "./specificDetails/SpeciesDetails";
 import {ViewContainer} from "../styled-components";
-import {useSpeciesImage} from "../useImage";
 
 export const FeedDetails = ({route}) => {
 
-	const {url, imageUrl} = route.params;
+	const {url} = route.params;
 	const {isPending, isError, data, error} = useDetails(url);
+	console.log(data);
 
 	return (
 		<>
@@ -34,9 +34,7 @@ export const FeedDetails = ({route}) => {
 
 				{
 					!(isPending || isError) &&
-					<Image source={useSpeciesImage(imageUrl)} style={{width: 200, height: 200}} />
-
-					&& (
+					(
 						(
 							url.includes("species") &&
 							<SpeciesDetails

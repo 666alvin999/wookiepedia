@@ -7,17 +7,17 @@ import {useStarshipsImage} from "../../../useImage";
 const StarshipCard = ({name, model, hyperdrive_rating, crew, cost_in_credits, url}: StarshipCardProps) => {
 	const navigation = useNavigation();
 
-	const imageUrl = useStarshipsImage(name);
+	const imagePath = useStarshipsImage(name);
 
 	const handlePress = () => {
-		navigation.navigate("Detail", {url: url, imageUrl: imageUrl});
+		navigation.navigate("Detail", {url: url});
 	};
 
 	return (
 		<>
 			<TouchableOpacity onPress={handlePress}>
 				<Card>
-					<Card.Cover source={imageUrl} resizeMode="cover" />
+					<Card.Cover source={imagePath} resizeMode="cover" />
 					<Card.Title
 						title={name}
 						subtitle={model}

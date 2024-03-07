@@ -10,7 +10,7 @@ const CharacterCard = ({name, homeworld, average_lifespan, average_height, class
 	const source = useSpeciesImage(name);
 
 	const handlePress = () => {
-		navigation.navigate("Detail", {url: url, imageUrl: source});
+		navigation.navigate("Detail", {url: url});
 	};
 
 	return (

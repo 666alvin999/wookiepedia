@@ -4,25 +4,13 @@ import {useNavigation} from "@react-navigation/native";
 import {VehicleCardProps} from "../types";
 import {useVehiclesImage} from "../../../useImage";
 
-const useImage = (name: string) => {
-	const imageName = `${name.toLowerCase().replace(" ", "")}`;
-	let source;
-
-	switch (imageName) {
-		case "lukeskywalker":
-			source = "https://www.leparisien.fr/resizer/hBQKqatpwpgeZIImeAiLscjOkQc=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/EAJWBYDXBBG4U65O3D4OTNDXD4.jpg"
-			break;
-	}
-	return source;
-};
-
 const CharacterCard = ({name, manufacturer, length, cost_in_credit, vehicle_class, url}: VehicleCardProps) => {
 	const navigation = useNavigation();
 
 	const source = useVehiclesImage(name);
 
 	const handlePress = () => {
-		navigation.navigate("Detail", {url: url, imageUrl: source});
+		navigation.navigate("Detail", {url: url});
 	};
 
 	return (

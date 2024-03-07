@@ -1,12 +1,17 @@
-import {DetailsView, Specificities, SpecificitiesView, TitleView} from "../styled-components";
+import {DetailImage, DetailsView, Specificities, SpecificitiesView, TitleView} from "../styled-components";
 import {SpeciesDetailsProps} from "../types";
 import {Text} from "react-native-paper";
+import {useSpeciesImage} from "../../useImage";
 
 export const SpeciesDetails = (props: SpeciesDetailsProps) => {
+
+	const source = useSpeciesImage(props.name);
 
 	return (
 		<>
 			<DetailsView>
+				<DetailImage source={source} />
+
 				<TitleView>
 					<Text variant="headlineLarge">{props.name}</Text>
 					<Text variant="bodyLarge">({props.classification}, {props.designation})</Text>

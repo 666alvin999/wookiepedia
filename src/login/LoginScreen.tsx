@@ -4,12 +4,12 @@ import {AppName, LoginViewContainer, MyBackground} from "../styled-components";
 
 const LoginScreen = () => {
 
-	const [imageUrl, error] = useAssets(require("../../assets/login-background.jpg"));
+	const [imagePath, error] = useAssets(require("../../assets/login-background.jpg"));
 
 	return (
 		<>
 			<MyBackground
-				source={{uri: imageUrl?.[0]?.uri}}
+				source={{uri: imagePath?.[0]?.uri}}
 				resizeMode="cover"
 			>
 				<LoginViewContainer>

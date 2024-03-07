@@ -37,7 +37,7 @@ type StarshipDetailsProps = {
 	name: string;
 	model: string;
 	manufacturer: string;
-	cost_in_credits: number;
+	cost_in_credits: string;
 	length: number;
 	max_atmosphering_speed: number;
 	crew: string;
@@ -45,7 +45,6 @@ type StarshipDetailsProps = {
 	cargo_capacity: number;
 	consumables: string;
 	hyperdrive_rating: number;
-	mglt: number;
 	starship_class: string;
 }
 
