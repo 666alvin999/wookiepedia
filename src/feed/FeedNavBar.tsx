@@ -35,6 +35,12 @@ export const FeedNavBar = ({selectedFeed, changeFeed}) => {
 					:
 					<Button onPress={() => changeFeed("vehicles")}>Vehicles</Button>
 				}
+
+				{selectedFeed === "random" ?
+					<SelectedButton onPress={() => changeFeed("random")}>Random</SelectedButton>
+					:
+					<Button onPress={() => changeFeed("random")}>Random</Button>
+				}
 			</MyNavBar>
 		</>
 	)

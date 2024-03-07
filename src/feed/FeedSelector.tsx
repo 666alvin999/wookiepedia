@@ -4,6 +4,7 @@ import {FeedContainer} from "./styled-components";
 import {PlanetsFeed} from "./feedTabs/PlanetsFeed";
 import {SpeciesFeed} from "./feedTabs/SpeciesFeed";
 import {VehiclesFeed} from "./feedTabs/VehiclesFeed";
+import {RandomFeed} from "./feedTabs/RandomFeed";
 
 export const FeedSelector = ({feed}) => {
 
@@ -28,6 +29,10 @@ export const FeedSelector = ({feed}) => {
 			{
 				feed === "vehicles" &&
 				<VehiclesFeed />
+			}
+			{
+				feed === "random" &&
+				<RandomFeed />
 			}
 		</FeedContainer>
 	)
