@@ -11,6 +11,18 @@ const FeedContainer = styled(View)`
   align-items: center;
 `;
 
+const RandomFeedContainer = styled(View)`
+  width: 90%;
+  height: 85%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+`;
+
+const RandomFeedObject = styled(View)`
+`;
+
 const StyledFlatList = styled(FlatList)`
   width: 100%;
   padding: 0 10%;
@@ -35,4 +47,4 @@ const SelectedButton = styled(Button)`
   background-color: rgba(255, 255, 0, 0.2);
 `;
 
-export {MyNavBar, SelectedButton, FeedContainer, StyledFlatList};
+export {MyNavBar, SelectedButton, FeedContainer, RandomFeedContainer, StyledFlatList};

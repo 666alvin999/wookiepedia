@@ -2,10 +2,11 @@ import {View} from "react-native";
 import {ActivityIndicator, Text} from "react-native-paper";
 import {VehicleCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
-import VehicleCard from "./feedCards/VehicleCard";
+import {VehicleCard} from "./feedCards/VehicleCard";
 import {useVehicles} from "../../queries/useVehicles";
 
 export const VehiclesFeed = () => {
+
 	const {isPending, isError, data, error} = useVehicles();
 
 	return (

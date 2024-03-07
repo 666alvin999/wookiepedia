@@ -2,10 +2,11 @@ import {View} from "react-native";
 import {ActivityIndicator, Text} from "react-native-paper";
 import {PlanetCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
-import PlanetCard from "./feedCards/PlanetCard";
+import {PlanetCard} from "./feedCards/PlanetCard";
 import {usePlanets} from "../../queries/usePlantets";
 
 export const PlanetsFeed = () => {
+
 	const {isPending, isError, data, error} = usePlanets();
 
 	return (

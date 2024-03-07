@@ -4,7 +4,8 @@ import {useNavigation} from "@react-navigation/native";
 import {PlanetCardProps} from "../types";
 import {usePlanetsImage} from "../../../useImage";
 
-const PlanetCard = ({name, climate, rotation_period, orbital_period, population, url}: PlanetCardProps) => {
+export const PlanetCard = ({name, climate, rotation_period, orbital_period, population, url}: PlanetCardProps) => {
+
 	const navigation = useNavigation();
 
 	const source = usePlanetsImage(name);
@@ -31,6 +32,5 @@ const PlanetCard = ({name, climate, rotation_period, orbital_period, population,
 			</TouchableOpacity>
 		</>
 	);
-};
 
-export default PlanetCard;
+};

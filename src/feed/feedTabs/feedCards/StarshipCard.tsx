@@ -4,7 +4,8 @@ import {useNavigation} from "@react-navigation/native";
 import {StarshipCardProps} from "../types";
 import {useStarshipsImage} from "../../../useImage";
 
-const StarshipCard = ({name, model, hyperdrive_rating, crew, cost_in_credits, url}: StarshipCardProps) => {
+export const StarshipCard = ({name, model, hyperdrive_rating, crew, cost_in_credits, url}: StarshipCardProps) => {
+
 	const navigation = useNavigation();
 
 	const imagePath = useStarshipsImage(name);
@@ -34,6 +35,5 @@ const StarshipCard = ({name, model, hyperdrive_rating, crew, cost_in_credits, ur
 			</TouchableOpacity>
 		</>
 	);
-};
 
-export default StarshipCard;
+};

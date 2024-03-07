@@ -4,7 +4,8 @@ import {useNavigation} from "@react-navigation/native";
 import {SpeciesCardProps} from "../types";
 import {useSpeciesImage} from "../../../useImage";
 
-const CharacterCard = ({name, homeworld, average_lifespan, average_height, classification, url}: SpeciesCardProps) => {
+export const SpeciesCard = ({name, homeworld, average_lifespan, average_height, classification, url}: SpeciesCardProps) => {
+
 	const navigation = useNavigation();
 
 	const source = useSpeciesImage(name);
@@ -30,6 +31,5 @@ const CharacterCard = ({name, homeworld, average_lifespan, average_height, class
 			</TouchableOpacity>
 		</>
 	);
-};
 
-export default CharacterCard;
+};

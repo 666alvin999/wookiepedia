@@ -4,7 +4,7 @@ import {useNavigation} from "@react-navigation/native";
 import {CharacterCardProps} from "../types";
 import {useCharactersImage} from "../../../useImage";
 
-const CharacterCard = ({name, homeworld, height, weight, birth_year, url}: CharacterCardProps) => {
+export const CharacterCard = ({name, homeworld, height, weight, birth_year, url}: CharacterCardProps) => {
 
 	const navigation = useNavigation();
 	const source = useCharactersImage(name);
@@ -32,6 +32,5 @@ const CharacterCard = ({name, homeworld, height, weight, birth_year, url}: Chara
 			</TouchableOpacity>
 		</>
 	);
-};
 
-export default CharacterCard;
+};

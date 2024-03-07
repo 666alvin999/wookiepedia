@@ -4,7 +4,8 @@ import {useNavigation} from "@react-navigation/native";
 import {VehicleCardProps} from "../types";
 import {useVehiclesImage} from "../../../useImage";
 
-const CharacterCard = ({name, manufacturer, length, cost_in_credit, vehicle_class, url}: VehicleCardProps) => {
+export const VehicleCard = ({name, manufacturer, length, cost_in_credit, vehicle_class, url}: VehicleCardProps) => {
+
 	const navigation = useNavigation();
 
 	const source = useVehiclesImage(name);
@@ -33,6 +34,5 @@ const CharacterCard = ({name, manufacturer, length, cost_in_credit, vehicle_clas
 			</TouchableOpacity>
 		</>
 	);
-};
 
-export default CharacterCard;
+};

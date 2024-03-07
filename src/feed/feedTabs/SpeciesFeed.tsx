@@ -2,10 +2,11 @@ import {View} from "react-native";
 import {ActivityIndicator, Text} from "react-native-paper";
 import {SpeciesCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
-import SpeciesCard from "./feedCards/SpeciesCard";
+import {SpeciesCard} from "./feedCards/SpeciesCard";
 import {useSpecies} from "../../queries/useSpecies";
 
 export const SpeciesFeed = () => {
+
 	const {isPending, isError, data, error} = useSpecies();
 
 	return (

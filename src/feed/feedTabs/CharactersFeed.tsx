@@ -3,10 +3,10 @@ import {ActivityIndicator, Text} from "react-native-paper";
 import {CharacterCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
 import {useCharacters} from "../../queries/useCharacters";
-import CharacterCard from "./feedCards/CharacterCard";
-import {Colors} from "react-native/Libraries/NewAppScreen";
+import {CharacterCard} from "./feedCards/CharacterCard";
 
 export const CharactersFeed = () => {
+
 	const {isPending, isError, data, error} = useCharacters();
 
 	return (
@@ -41,4 +41,5 @@ export const CharactersFeed = () => {
 			)}
 		</>
 	);
+
 };
