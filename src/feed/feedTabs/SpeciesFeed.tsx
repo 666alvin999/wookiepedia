@@ -1,5 +1,5 @@
 import {View} from "react-native";
-import {Text} from "react-native-paper";
+import {ActivityIndicator, Text} from "react-native-paper";
 import {SpeciesCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
 import SpeciesCard from "./feedCards/SpeciesCard";
@@ -12,7 +12,7 @@ export const SpeciesFeed = () => {
 		<>
 			{isPending && (
 				<View>
-					<Text variant="labelLarge">Loading...</Text>
+					<ActivityIndicator />
 				</View>
 			)}
 

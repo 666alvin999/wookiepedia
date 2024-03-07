@@ -1,4 +1,4 @@
-import {Text} from "react-native-paper";
+import {ActivityIndicator, Text} from "react-native-paper";
 import {View} from "react-native";
 import {useDetails} from "../queries/useDetails";
 import {CharacterDetails} from "./specificDetails/CharacterDetails";
@@ -12,7 +12,6 @@ export const FeedDetails = ({route}) => {
 
 	const {url} = route.params;
 	const {isPending, isError, data, error} = useDetails(url);
-	console.log(data);
 
 	return (
 		<>
@@ -20,7 +19,7 @@ export const FeedDetails = ({route}) => {
 				{
 					isPending &&
 					<View>
-						<Text variant="labelLarge">Loading...</Text>
+						<ActivityIndicator />
 					</View>
 
 				}

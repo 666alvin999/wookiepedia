@@ -6,6 +6,9 @@ const FeedContainer = styled(View)`
   width: 100%;
   height: 85%;
   padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledFlatList = styled(FlatList)`

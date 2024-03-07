@@ -1,9 +1,10 @@
 import {View} from "react-native";
-import {Text} from "react-native-paper";
+import {ActivityIndicator, Text} from "react-native-paper";
 import {CharacterCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
 import {useCharacters} from "../../queries/useCharacters";
 import CharacterCard from "./feedCards/CharacterCard";
+import {Colors} from "react-native/Libraries/NewAppScreen";
 
 export const CharactersFeed = () => {
 	const {isPending, isError, data, error} = useCharacters();
@@ -11,9 +12,7 @@ export const CharactersFeed = () => {
 	return (
 		<>
 			{isPending && (
-				<View>
-					<Text variant="labelLarge">Loading...</Text>
-				</View>
+				<ActivityIndicator />
 			)}
 
 			{isError && (

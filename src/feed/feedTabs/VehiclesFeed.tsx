@@ -1,5 +1,5 @@
 import {View} from "react-native";
-import {Text} from "react-native-paper";
+import {ActivityIndicator, Text} from "react-native-paper";
 import {VehicleCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
 import VehicleCard from "./feedCards/VehicleCard";
@@ -12,7 +12,7 @@ export const VehiclesFeed = () => {
 		<>
 			{isPending && (
 				<View>
-					<Text variant="labelLarge">Loading...</Text>
+					<ActivityIndicator />
 				</View>
 			)}
 

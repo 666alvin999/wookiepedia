@@ -1,6 +1,6 @@
 import {View} from "react-native";
 import {useStarships} from "../../queries/useStarships";
-import {Text} from "react-native-paper";
+import {ActivityIndicator, Text} from "react-native-paper";
 import StarshipCard from "./feedCards/StarshipCard";
 import {StarshipCardProps} from "./types";
 import {StyledFlatList} from "../styled-components";
@@ -12,7 +12,7 @@ export const StarshipFeed = () => {
 		<>
 			{isPending && (
 				<View>
-					<Text variant="labelLarge">Loading...</Text>
+					<ActivityIndicator />
 				</View>
 			)}
 
