@@ -1,45 +1,65 @@
 import {View} from "react-native";
 import {ActivityIndicator, Text} from "react-native-paper";
-import {CharacterCardProps} from "./types";
-import {StyledFlatList} from "../styled-components";
 import {useCharacters} from "../../queries/useCharacters";
-import CharacterCard from "./feedCards/CharacterCard";
-import {Colors} from "react-native/Libraries/NewAppScreen";
-import {useRandom} from "../../queries/useRandom";
+import {useSpecies} from "../../queries/useSpecies";
+import {usePlanets} from "../../queries/usePlantets";
+import {useStarships} from "../../queries/useStarships";
+import {useVehicles} from "../../queries/useVehicles";
 
 export const RandomFeed = () => {
-	const {isPending, isError, data, error} = useRandom();
+
+	const character = useCharacters(getRandomInt(10));
+	const species = useSpecies(getRandomInt(10));
+	const planet = usePlanets(getRandomInt(10));
+	const starship = useStarships(getRandomInt(10));
+	const vehicle = useVehicles(getRandomInt(10));
+
+	function getRandomInt(max: number) {
+		return Math.floor((Math.random() * max) + 1);
+	}
+
+	console.log(character.data);
+
+	function isPending() {
+		return character.isPending
+			|| species.isPending
+			|| planet.isPending
+			|| starship.isPending
+			|| vehicle.isPending;
+	}
+
+	function isError() {
+		return character.isError
+			|| species.isError
+			|| planet.isError
+			|| starship.isError
+			|| vehicle.isError;
+	}
 
 	return (
 		<>
-			{isPending && (
-				<ActivityIndicator />
-			)}
+			{
+				isPending() && (
+					<ActivityIndicator />
+				)
+			}
 
-			{isError && (
-				<View>
-					<Text>{`${error}`}</Text>
-				</View>
-			)}
+			{
+				isError() && (
+					<View>
+						<Text>{`${character.error}`}</Text>
+					</View>
+				)
+			}
 
-			{!(isPending || isError) && (
-				<StyledFlatList
-					data={data.results}
-					renderItem={({item}: { item: CharacterCardProps }) => (
-						<CharacterCard
-							name={item.name}
-							homeworld={item.homeworld}
-							height={item.height}
-							weight={item.weight}
-							birth_year={item.birth_year}
-							url={item.url}
-						/>
-					)}
-					ItemSeparatorComponent={() => (
-						<View style={{height: 20}} />
-					)}
-				/>
-			)}
+			{
+				!(isPending() || isError())
+				&& (
+					<>
+
+					</>
+				)
+			}
 		</>
 	);
 };
