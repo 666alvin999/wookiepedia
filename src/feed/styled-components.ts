@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import {FlatList, View} from "react-native";
+import {FlatList, ScrollView, View} from "react-native";
 import {Button} from "react-native-paper";
 
 const FeedContainer = styled(View)`
@@ -11,21 +11,17 @@ const FeedContainer = styled(View)`
   align-items: center;
 `;
 
-const RandomFeedContainer = styled(View)`
-  width: 90%;
-  height: 85%;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-`;
-
-const RandomFeedObject = styled(View)`
-`;
-
 const StyledFlatList = styled(FlatList)`
   width: 100%;
   padding: 0 10%;
+`;
+
+const StyledScrollView = styled(ScrollView)`
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 `;
 
 const MyNavBar = styled(View)`
@@ -47,4 +43,4 @@ const SelectedButton = styled(Button)`
   background-color: rgba(255, 255, 0, 0.2);
 `;
 
-export {MyNavBar, SelectedButton, FeedContainer, RandomFeedContainer, StyledFlatList};
+export {MyNavBar, SelectedButton, FeedContainer, StyledScrollView, StyledFlatList};

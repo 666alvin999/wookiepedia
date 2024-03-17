@@ -5,7 +5,7 @@ import {useSpecies} from "../../queries/useSpecies";
 import {usePlanets} from "../../queries/usePlantets";
 import {useStarships} from "../../queries/useStarships";
 import {useVehicles} from "../../queries/useVehicles";
-import {RandomFeedContainer} from "../styled-components";
+import {FeedContainer, StyledScrollView} from "../styled-components";
 import {CharacterCard} from "./feedCards/CharacterCard";
 import {SpeciesCard} from "./feedCards/SpeciesCard";
 import {PlanetCard} from "./feedCards/PlanetCard";
@@ -23,6 +23,8 @@ export const RandomFeed = () => {
 	const planet = usePlanets(getRandomInt(10));
 	const starship = useStarships(getRandomInt(10));
 	const vehicle = useVehicles(getRandomInt(10));
+
+	console.log(vehicle)
 
 	const isPending = () => {
 		return character.isPending
@@ -60,32 +62,34 @@ export const RandomFeed = () => {
 				!(isPending() || isError())
 				&& (
 					<>
-						<RandomFeedContainer>
-							<CharacterCard name={character.data.name} height={character.data.height}
-							               weight={character.data.height} birth_year={character.data.birth_year}
-							               homeworld={character.data.homeworld} url={character.data.url}
-							/>
+						<StyledScrollView contentContainerStyle={{rowGap: 20}}>
+								<CharacterCard name={character.data.name} height={character.data.height}
+								               weight={character.data.height} birth_year={character.data.birth_year}
+								               homeworld={character.data.homeworld} url={character.data.url}
+								/>
 
-							<SpeciesCard name={species.data.name} classification={species.data.classification}
-							             homeworld={species.data.homeworld} average_lifespan={species.data.average_lifespan}
-							             average_height={species.data.average_height} url={species.data.url}
-							/>
+								<SpeciesCard name={species.data.name} classification={species.data.classification}
+								             homeworld={species.data.homeworld}
+								             average_lifespan={species.data.average_lifespan}
+								             average_height={species.data.average_height} url={species.data.url}
+								/>
 
-							<PlanetCard name={planet.data.name} climate={planet.data.climate}
-							            rotation_period={planet.data.rotation_period} orbital_period={planet.data.order}
-							            population={planet.data.population} url={planet.data.url}
-							/>
+								<PlanetCard name={planet.data.name} climate={planet.data.climate}
+								            rotation_period={planet.data.rotation_period} orbital_period={planet.data.order}
+								            population={planet.data.population} url={planet.data.url}
+								/>
 
-							<StarshipCard name={starship.data.name} model={starship.data.model} crew={starship.data.crew}
-							              hyperdrive_rating={starship.data.hyperdrive_rating}
-							              cost_in_credits={starship.data.cost_in_credit} url={starship.data.url}
-							/>
+								<StarshipCard name={starship.data.name} model={starship.data.model}
+								              crew={starship.data.crew}
+								              hyperdrive_rating={starship.data.hyperdrive_rating}
+								              cost_in_credits={starship.data.cost_in_credit} url={starship.data.url}
+								/>
 
-							<VehicleCard name={vehicle.data.name} vehicle_class={vehicle.data.vehicle_class}
-							             manufacturer={vehicle.data.manufacturer} length={vehicle.data.length}
-							             cost_in_credit={vehicle.data.cost_in_credits} url={vehicle.data.url}
-							/>
-						</RandomFeedContainer>
+								<VehicleCard name={vehicle.data.name} vehicle_class={vehicle.data.vehicle_class}
+								             manufacturer={vehicle.data.manufacturer} length={vehicle.data.length}
+								             cost_in_credit={vehicle.data.cost_in_credits} url={vehicle.data.url}
+								/>
+						</StyledScrollView>
 					</>
 				)
 			}

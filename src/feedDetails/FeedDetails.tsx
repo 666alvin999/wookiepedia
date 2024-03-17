@@ -13,6 +13,8 @@ export const FeedDetails = ({route}) => {
 	const {url} = route.params;
 	const {isPending, isError, data, error} = useDetails(url);
 
+	console.log(url)
+
 	return (
 		<>
 			<ViewContainer>
@@ -92,7 +94,6 @@ export const FeedDetails = ({route}) => {
 								cargo_capacity={data.cargo_capacity}
 								consumables={data.consumables}
 								hyperdrive_rating={data.hyperdrive_rating}
-								mglt={data.mglt}
 								starship_class={data.starship_class}
 							/>
 						)
